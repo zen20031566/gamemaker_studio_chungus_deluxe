@@ -152,6 +152,8 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="AppWindow.h" />
+    <ClInclude Include="GameMakerStudioChungusDeluxe.h" />
+    <ClInclude Include="GMSCDMath.h" />
     <ClInclude Include="Mathf.h" />
     <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="TestScene.h" />

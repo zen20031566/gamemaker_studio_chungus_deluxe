@@ -1,9 +1,4 @@
-
-#include <glad/glad.h>
-#include <glfw/glfw3.h>
-#include <iostream>
-#include <glm/glm.hpp>
-#include "Application.h" 
+#include "GameMakerStudioChungusDeluxe.h"
 	
 int main()
 {

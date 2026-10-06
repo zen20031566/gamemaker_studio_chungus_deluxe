@@ -1,33 +1,34 @@
 #pragma once
 #include "Mathf.h"
+#include "Vector3.h"
 #include <string>
 
 namespace GameMakerStudioChungusDeluxe
 {
-	struct Vector2
+	class Vector2
 	{
+	public:
 		float x;
 		float y;
 
 		Vector2();
 		Vector2(float x, float y);
+		Vector2(const Vector3& v);  
+		operator Vector3() const;
 
 		float magnitude() const;
 		Vector2 normalized() const;
 		float sqrMagnitude() const;
 
-		static Vector2 down;
-		static Vector2 left;
-		static Vector2 one;
-		static Vector2 right;
-		static Vector2 up;
-		static Vector2 zero;
-		static Vector2 negativeInfinity;
-		static Vector2 positiveInfinity;
+		const static Vector2 down;
+		const static Vector2 left;
+		const static Vector2 one;
+		const static Vector2 right;
+		const static Vector2 up;
+		const static Vector2 zero;
+		const static Vector2 positiveInfinity;
 
 		bool equals(const Vector2& other) const;
-		void normalize();
-		void scale(const Vector2& scale);
 		void set(float newX, float newY);
 		std::string toString() const;
 

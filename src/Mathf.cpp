@@ -27,10 +27,25 @@ namespace GameMakerStudioChungusDeluxe
 	float Mathf::log(float f) { return std::log(f); }
 	float Mathf::log10(float f) { return std::log10(f); }
 
-	float Mathf::min(float a, float b) { return a < b ? a : b; }
-	int Mathf::min(int a, int b) { return a < b ? a : b; }
-	float Mathf::max(float a, float b) { return a > b ? a : b; }
-	int Mathf::max(int a, int b) { return a > b ? a : b; }
+	float Mathf::min(float a, float b) 
+	{ 
+		return a < b ? a : b; 
+	}
+
+	int Mathf::min(int a, int b) 
+	{ 
+		return a < b ? a : b; 
+	}
+
+	float Mathf::max(float a, float b) 
+	{ 
+		return a > b ? a : b; 
+	}
+
+	int Mathf::max(int a, int b) 
+	{ 
+		return a > b ? a : b; 
+	}
 
 	float Mathf::clamp(float value, float min, float max)
 	{

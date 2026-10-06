@@ -3,8 +3,9 @@
 
 namespace GameMakerStudioChungusDeluxe
 {
-	struct Mathf
+	class Mathf
 	{
+	public:
 		Mathf() = delete;
 
 		static constexpr float PI = 3.1415927f;
@@ -12,6 +13,7 @@ namespace GameMakerStudioChungusDeluxe
 		static constexpr float Infinity = std::numeric_limits<float>::infinity();
 		static constexpr float DegToRad = 0.017453292f; // pi/180
 		static constexpr float RadToDeg = 57.29578f; // 180/pi
+		static constexpr float EpsilonNormalSqrt = 1e-15f;
 
 		static float sin(float f);
 		static float cos(float f);
