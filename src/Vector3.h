@@ -26,8 +26,6 @@ namespace GameMakerStudioChungusDeluxe
 		const static Vector3 zero;
 		const static Vector3 positiveInfinity;
 
-		bool equals(const Vector3& other) const;
-		void set(float newX, float newY, float newZ);
 		std::string toString() const;
 
 		static float angle(const Vector3& from, const Vector3& to);
@@ -44,6 +42,8 @@ namespace GameMakerStudioChungusDeluxe
 		static Vector3 reflect(const Vector3& inDirection, const Vector3& inNormal);
 		static Vector3 scale(const Vector3& a, const Vector3& b);
 		static float signedAngle(const Vector3& from, const Vector3& to, const Vector3& axis);
+		static Vector3 project(const Vector3& vector, const Vector3& onNormal);
+		static Vector3 projectOnPlane(const Vector3& vector, const Vector3& planeNormal);
 	};
 
 	Vector3 operator+(const Vector3& a, const Vector3& b);

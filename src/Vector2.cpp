@@ -31,17 +31,6 @@ namespace GameMakerStudioChungusDeluxe
 		return x * x + y * y;
 	}
 
-	bool Vector2::equals(const Vector2& other) const
-	{
-		return x == other.x && y == other.y;
-	}
-
-	void Vector2::set(float newX, float newY)
-	{
-		x = newX;
-		y = newY;	
-	}
-
 	std::string Vector2::toString() const
 	{
 		return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
@@ -49,15 +38,15 @@ namespace GameMakerStudioChungusDeluxe
 
 	float Vector2::angle(const Vector2& from, const Vector2& to)
 	{
-		float denominator = from.sqrMagnitude() * to.sqrMagnitude();
-		if (denominator < Mathf::EpsilonNormalSqrt * Mathf::EpsilonNormalSqrt)
+		float denominator = Mathf::sqrt(from.sqrMagnitude() * to.sqrMagnitude());
+
+		if (denominator < Mathf::EpsilonNormalSqrt)
 		{
 			return 0.0f;
 		}
 
-		denominator = Mathf::sqrt(denominator);
-
 		float d = Mathf::clamp(dot(from, to) / denominator, -1.0f, 1.0f);
+
 		return Mathf::acos(d) * Mathf::RadToDeg;
 	}
 

@@ -24,9 +24,6 @@
     <ClCompile Include="Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AppWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,12 +45,15 @@
     <ClCompile Include="Matrix4x4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowcaseScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TestScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AppWindow.h">
@@ -81,6 +81,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameMakerStudioChungusDeluxe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowcaseScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

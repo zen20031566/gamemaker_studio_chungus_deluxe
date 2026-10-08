@@ -140,10 +140,11 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AppWindow.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mathf.cpp" />
     <ClCompile Include="Matrix4x4.cpp" />
-    <ClCompile Include="TestScene.cpp" />
+    <ClCompile Include="ShowcaseScene.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
@@ -154,9 +155,10 @@
     <ClInclude Include="AppWindow.h" />
     <ClInclude Include="GameMakerStudioChungusDeluxe.h" />
     <ClInclude Include="GMSCDMath.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Mathf.h" />
     <ClInclude Include="Matrix4x4.h" />
-    <ClInclude Include="TestScene.h" />
+    <ClInclude Include="ShowcaseScene.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />

@@ -7,7 +7,17 @@ namespace GameMakerStudioChungusDeluxe
 	const Vector4 Vector4::positiveInfinity = Vector4(Mathf::Infinity, Mathf::Infinity, Mathf::Infinity, Mathf::Infinity);
 
 	Vector4::Vector4() : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {}
-	Vector4::Vector4(float x, float y, float z, float w) : x(x), y(y), z(z), w(w) {}
+	Vector4::Vector4(float x, float y, float z, float w) : x(x), y(y), z(z), w(w){}
+
+	float& Vector4::operator[](int i)
+	{
+		return (&x)[i];
+	}
+
+	const float& Vector4::operator[](int i) const
+	{
+		return (&x)[i];
+	}
 
 	float Vector4::magnitude() const
 	{
@@ -22,19 +32,6 @@ namespace GameMakerStudioChungusDeluxe
 	float Vector4::sqrMagnitude() const
 	{
 		return x * x + y * y + z * z + w * w;
-	}
-
-	bool Vector4::equals(const Vector4& other) const
-	{
-		return x == other.x && y == other.y && z == other.z && w == other.w;
-	}
-
-	void Vector4::set(float newX, float newY, float newZ, float newW)
-	{
-		x = newX;
-		y = newY;
-		z = newZ;
-		w = newW;
 	}
 
 	std::string Vector4::toString() const

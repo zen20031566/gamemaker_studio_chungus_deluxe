@@ -53,15 +53,18 @@ namespace GameMakerStudioChungusDeluxe
 
         glfwSetWindowUserPointer(window, &windowData);
 
-        glfwSetWindowCloseCallback(window, [](GLFWwindow* win) {
-            AppWindowData* winData = static_cast<AppWindowData*>(glfwGetWindowUserPointer(win));
-            winData->func_cb(AppWindowEventType::CLOSE, nullptr);
+        glfwSetWindowCloseCallback(window, [](GLFWwindow* win) 
+			{
+				AppWindowData* windowData = static_cast<AppWindowData*>(glfwGetWindowUserPointer(win));
+				windowData->func_cb(AppWindowEventType::CLOSE, nullptr);
             });
 
-        glfwSetFramebufferSizeCallback(window, [](GLFWwindow* win, int width, int height) {
-            AppWindowData* winData = static_cast<AppWindowData*>(glfwGetWindowUserPointer(win));
-            AppWindowResizeData resizeData{ width, height };
-            winData->func_cb(AppWindowEventType::RESIZE, &resizeData);
+        glfwSetFramebufferSizeCallback(window, [](GLFWwindow* win, int width, int height)
+			{
+				AppWindowData* windowData = static_cast<AppWindowData*>(glfwGetWindowUserPointer(win));
+				windowData->width = width;
+				windowData->height = height;
+				windowData->func_cb(AppWindowEventType::RESIZE, windowData);
             });
 
         // window created successfully, cache the reference 
@@ -82,4 +85,22 @@ namespace GameMakerStudioChungusDeluxe
         windowData.func_cb = fn;
     }
 
+	void* AppWindow::getNativeWindow()
+	{
+		return nativeWindow;
+	}
+
+	Vector2 AppWindow::getWindowSize()
+	{
+		GLFWwindow* window = static_cast<GLFWwindow*>(nativeWindow);
+		int width, height;
+		glfwGetWindowSize(window, &width, &height);
+		return Vector2(width, height);
+	}
+
+	void AppWindow::setWindowSize(int width, int height)
+	{
+		GLFWwindow* window = static_cast<GLFWwindow*>(nativeWindow);
+		glfwSetWindowSize(window, width, height);
+	}
 }

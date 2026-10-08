@@ -22,5 +22,7 @@ namespace GameMakerStudioChungusDeluxe
 
         static void setTargetFrameRate(unsigned int frameRate); 
         static void quit();
+		static Vector2 getWindowSize();
+		static void setWindowSize(int width, int height);
     };
 }

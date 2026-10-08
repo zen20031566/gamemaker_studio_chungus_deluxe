@@ -8,6 +8,13 @@ namespace GameMakerStudioChungusDeluxe
 		Time() = delete; //default constructor is deleted to prevent creation of Time objects because time needs to be single global scoped obj
 		static float getTime();
 		static float getDeltaTime();
+
+		static float getUnscaledTime();
+		static float getUnscaledDeltaTime();
+
+		static float getTimeScale();
+		static void setTimeScale(float scale);
+
 		static void processTime(float frameTime);
 	};
 }

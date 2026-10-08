@@ -28,18 +28,6 @@ namespace GameMakerStudioChungusDeluxe
 		return x * x + y * y + z * z;
 	}
 
-	bool Vector3::equals(const Vector3& other) const
-	{
-		return x == other.x && y == other.y && z == other.z;
-	}
-
-	void Vector3::set(float newX, float newY, float newZ)
-	{
-		x = newX;
-		y = newY;
-		z = newZ;
-	}
-
 	std::string Vector3::toString() const
 	{
 		return "(" + std::to_string(x) + ", " + std::to_string(y) + ", " + std::to_string(z) + ")";
@@ -47,15 +35,15 @@ namespace GameMakerStudioChungusDeluxe
 
 	float Vector3::angle(const Vector3& from, const Vector3& to)
 	{
-		float denominator = from.sqrMagnitude() * to.sqrMagnitude();
-		if (denominator < Mathf::EpsilonNormalSqrt * Mathf::EpsilonNormalSqrt)
+		float denominator = Mathf::sqrt(from.sqrMagnitude() * to.sqrMagnitude());
+
+		if (denominator < Mathf::EpsilonNormalSqrt)
 		{
 			return 0.0f;
 		}
 
-		denominator = Mathf::sqrt(denominator);
-
 		float d = Mathf::clamp(dot(from, to) / denominator, -1.0f, 1.0f);
+
 		return Mathf::acos(d) * Mathf::RadToDeg;
 	}
 
@@ -170,6 +158,30 @@ namespace GameMakerStudioChungusDeluxe
 		float crossZ = from.x * to.y - from.y * to.x;
 		float sign = Mathf::sign(axis.x * crossX + axis.y * crossY + axis.z * crossZ);
 		return unsignedAngle * sign;
+	}
+
+	Vector3 Vector3::project(const Vector3& vector, const Vector3& onNormal)
+	{
+		float sqrMag = dot(onNormal, onNormal);
+		if (sqrMag < Mathf::Epsilon)
+		{
+			return zero;
+		}
+
+		float d = dot(vector, onNormal);
+		return onNormal * (d / sqrMag);
+	}
+
+	Vector3 Vector3::projectOnPlane(const Vector3& vector, const Vector3& planeNormal)
+	{
+		float sqrMag = dot(planeNormal, planeNormal);
+		if (sqrMag < Mathf::Epsilon)
+		{
+			return vector;
+		}
+
+		float d = dot(vector, planeNormal);
+		return vector - planeNormal * (d / sqrMag);
 	}
 
 	Vector3 operator+(const Vector3& a, const Vector3& b)

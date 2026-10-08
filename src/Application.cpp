@@ -1,7 +1,5 @@
-#include "Application.h" 
-#include "Time.h"
-#include "TestScene.h" 
-#include "iostream"
+#include "GameMakerStudioChungusDeluxe.h"
+#include "ShowcaseScene.h"
 
 namespace GameMakerStudioChungusDeluxe
 {
@@ -35,9 +33,10 @@ namespace GameMakerStudioChungusDeluxe
     {
         // 0. Late Init 
         // To be removed after OCM is operational ==== 
-        float x = 0.0f, y = 0.0f, z = 0.0f;
-        float r = 0.0f, g = 1.0f, b = 1.0f;
-        TestScene::init();
+		Input::init(&window);
+		ShowcaseScene* scene = new ShowcaseScene();
+		scene->init();
+
         // =========================================== 
 
         while (isRunning)
@@ -46,15 +45,19 @@ namespace GameMakerStudioChungusDeluxe
             Time::processTime(frameTime);
 
             // 2. Input Processing 
+			Input::process();
 
             // 3. Updates 
+			scene->update(Time::getDeltaTime());
 
             // 4. Render 
-            TestScene::draw(x, y, z, r, g, b);
+			scene->draw();
 
             // 5. Display 
             window.update();
         }
+
+		delete scene;
     }
 
     void Application::cleanup()
@@ -65,10 +68,15 @@ namespace GameMakerStudioChungusDeluxe
         // window being an object on the stack. 
     }
 
-    void GameMakerStudioChungusDeluxe::Application::setTargetFrameRate(unsigned int frameRate)
+    void Application::setTargetFrameRate(unsigned int frameRate)
     {
         instance->targetFrameRate = frameRate;
         instance->frameTime = frameRate > 0 ? 1.0f / frameRate : 0.0f;
+
+		if (frameRate == 0)
+			std::cout << "Framerate set to: Unlimited" << std::endl;
+		else
+			std::cout << "Framerate set to: " << frameRate << " fps" << std::endl;
     }
 
     void Application::quit()
@@ -90,12 +98,22 @@ namespace GameMakerStudioChungusDeluxe
             case AppWindowEventType::RESIZE:
             {
                 std::cout << "Window Resize Event" << std::endl;
-                AppWindowResizeData* resizeData = static_cast<AppWindowResizeData*>(payload);
-                std::cout << "Width: " << resizeData->width << std::endl;
-                std::cout << "Height: " << resizeData->height << std::endl;
+                AppWindowData* windowData = static_cast<AppWindowData*>(payload);
+                std::cout << "Width: " << windowData->width << std::endl;
+                std::cout << "Height: " << windowData->height << std::endl;
                 break;
 
             }
         }
     }
+
+	Vector2 Application::getWindowSize()
+	{
+		return instance->window.getWindowSize();	
+	}
+
+	void Application::setWindowSize(int width, int height)
+	{
+		instance->window.setWindowSize(width, height);
+	}
 }

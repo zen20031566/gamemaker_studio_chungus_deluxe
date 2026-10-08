@@ -1,6 +1,7 @@
 #pragma once
 #include <string>                      
 #include <functional> 
+#include "GMSCDMath.h"
 
 namespace GameMakerStudioChungusDeluxe
 {
@@ -25,12 +26,6 @@ namespace GameMakerStudioChungusDeluxe
         AppWindowEventCallbackFn func_cb;
     };
 
-    struct AppWindowResizeData
-    {
-        int width;
-        int height;
-    };
-
     class AppWindow
     {
     private:
@@ -42,5 +37,8 @@ namespace GameMakerStudioChungusDeluxe
         int init(AppWindowData data);
         void update();
         void setWindowEventCallback(const AppWindowEventCallbackFn& fn);
+		void* getNativeWindow();
+		Vector2 getWindowSize();
+		void setWindowSize(int width, int height);
     };
 }

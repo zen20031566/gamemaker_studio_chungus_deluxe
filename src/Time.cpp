@@ -1,11 +1,15 @@
 #include "Time.h"
 #include <glfw/glfw3.h>            
+#include "Mathf.h"
 
 namespace GameMakerStudioChungusDeluxe
 {
-    static float currentTime = 0.0f;
-    static float prevTime = 0.0f;
-    static float deltaTime = 0.0f;
+	static float currentTime = 0.0f;
+	static float deltaTime = 0.0f;
+	static float unscaledTime = 0.0f;
+	static float unscaledDeltaTime = 0.0f;
+	static float timeScale = 1.0f;
+	static double prevTime = 0.0;
 
     float Time::getTime()
     {
@@ -17,17 +21,40 @@ namespace GameMakerStudioChungusDeluxe
         return deltaTime;
     }
 
+	float Time::getUnscaledTime()
+	{
+		return unscaledTime;
+	}
+
+	float Time::getUnscaledDeltaTime()
+	{
+		return unscaledDeltaTime;
+	}
+
+	float Time::getTimeScale()
+	{
+		return timeScale;
+	}
+
+	void Time::setTimeScale(float scale)
+	{
+		timeScale = Mathf::max(scale, 0.0f);
+	}
+
     void Time::processTime(float frameTime)
     {
-        currentTime = glfwGetTime();
-        deltaTime = currentTime - prevTime;
+		unscaledTime = glfwGetTime();
+		unscaledDeltaTime = unscaledTime - prevTime;
 
-        while (deltaTime < frameTime)
-        {
-            currentTime = glfwGetTime();
-            deltaTime = currentTime - prevTime;
-        }
+		while (unscaledDeltaTime < frameTime)
+		{
+			unscaledTime = glfwGetTime();
+			unscaledDeltaTime = unscaledTime - prevTime;
+		}
 
-        prevTime = currentTime;
+		prevTime = unscaledTime;
+
+		deltaTime = unscaledDeltaTime * timeScale;
+		currentTime += deltaTime;
     }
 }

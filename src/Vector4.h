@@ -15,6 +15,9 @@ namespace GameMakerStudioChungusDeluxe
 		Vector4();
 		Vector4(float x, float y, float z, float w);
 
+		float& operator[](int i);
+		const float& operator[](int i) const;
+
 		float magnitude() const;
 		Vector4 normalized() const;
 		float sqrMagnitude() const;
@@ -23,8 +26,6 @@ namespace GameMakerStudioChungusDeluxe
 		const static Vector4 zero;
 		const static Vector4 positiveInfinity;
 
-		bool equals(const Vector4& other) const;
-		void set(float newX, float newY, float newZ, float newW);
 		std::string toString() const;
 
 		static float distance(const Vector4& a, const Vector4& b);
@@ -45,5 +46,4 @@ namespace GameMakerStudioChungusDeluxe
 	Vector4 operator/(const Vector4& a, float d);
 	bool operator==(const Vector4& lhs, const Vector4& rhs);
 	bool operator!=(const Vector4& lhs, const Vector4& rhs);
-
 }

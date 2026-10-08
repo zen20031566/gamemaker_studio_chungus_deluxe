@@ -28,8 +28,6 @@ namespace GameMakerStudioChungusDeluxe
 		const static Vector2 zero;
 		const static Vector2 positiveInfinity;
 
-		bool equals(const Vector2& other) const;
-		void set(float newX, float newY);
 		std::string toString() const;
 
 		static float angle(const Vector2& from, const Vector2& to);
