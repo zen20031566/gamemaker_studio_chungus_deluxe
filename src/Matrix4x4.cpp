@@ -1,7 +1,8 @@
 #include "Matrix4x4.h"
 #include "Mathf.h"
+#include <glm/glm.hpp>
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	Matrix4x4::Matrix4x4()
 	{
@@ -41,6 +42,29 @@ namespace GameMakerStudioChungusDeluxe
 		Vector4(0, 0, 0, 0),
 		Vector4(0, 0, 0, 0),
 		Vector4(0, 0, 0, 0));
+
+	Matrix4x4 Matrix4x4::inverse() const
+	{
+		//annoying to do just use glm
+		glm::mat4 m;
+		for (int i = 0; i < 4; i++)
+		{
+			m[i] = glm::vec4(col[i].x, col[i].y, col[i].z, col[i].w);
+		}
+
+		if (Mathf::abs(glm::determinant(m)) < Mathf::Epsilon)
+		{
+			return Matrix4x4::zero;
+		}
+
+		glm::mat4 inv = glm::inverse(m);
+		Matrix4x4 result;
+		for (int i = 0; i < 4; i++)
+		{
+			result[i] = Vector4(inv[i][0], inv[i][1], inv[i][2], inv[i][3]);
+		}
+		return result;
+	}
 
 	Matrix4x4 Matrix4x4::translate(const Vector3& v)
 	{
@@ -89,6 +113,21 @@ namespace GameMakerStudioChungusDeluxe
 		return translate(pos) * rotate(degrees, axis) * scale(s);
 	}
 
+	Matrix4x4 Matrix4x4::ortho(float left, float right, float bottom, float top, float zNear, float zFar)
+	{
+		Matrix4x4 m;
+
+		m[0][0] = 2.0f / (right - left);
+		m[1][1] = 2.0f / (top - bottom);
+		m[2][2] = -2.0f / (zFar - zNear);
+
+		m[3][0] = -(right + left) / (right - left);
+		m[3][1] = -(top + bottom) / (top - bottom);
+		m[3][2] = -(zFar + zNear) / (zFar - zNear);
+
+		return m;
+	}
+
 	Matrix4x4 operator*(const Matrix4x4& a, const Matrix4x4& b)
 	{
 		Matrix4x4 r;
@@ -130,5 +169,11 @@ namespace GameMakerStudioChungusDeluxe
 	bool operator!=(const Matrix4x4& a, const Matrix4x4& b)
 	{
 		return !(a == b);
+	}
+
+	Matrix4x4& operator*=(Matrix4x4& a, const Matrix4x4& b)
+	{
+		a = a * b;
+		return a;
 	}
 }

@@ -1,6 +1,6 @@
 #include "Vector2.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	const Vector2 Vector2::down = Vector2(0.0f, -1.0f);
 	const Vector2 Vector2::left = Vector2(-1.0f, 0.0f);
@@ -180,5 +180,33 @@ namespace GameMakerStudioChungusDeluxe
 	bool operator!=(const Vector2& lhs, const Vector2& rhs)
 	{
 		return !(lhs == rhs);
+	}
+
+	Vector2& operator+=(Vector2& a, const Vector2& b)
+	{
+		a.x += b.x;
+		a.y += b.y;
+		return a;
+	}
+
+	Vector2& operator-=(Vector2& a, const Vector2& b)
+	{
+		a.x -= b.x;
+		a.y -= b.y;
+		return a;
+	}
+
+	Vector2& operator*=(Vector2& a, float d)
+	{
+		a.x *= d;
+		a.y *= d;
+		return a;
+	}
+
+	Vector2& operator/=(Vector2& a, float d)
+	{
+		a.x /= d;
+		a.y /= d;
+		return a;
 	}
 }

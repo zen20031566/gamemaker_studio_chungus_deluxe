@@ -3,7 +3,7 @@
 #include "Vector3.h"
 #include <string>
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	class Vector2
 	{
@@ -55,4 +55,8 @@ namespace GameMakerStudioChungusDeluxe
 	Vector2 operator/(const Vector2& a, float d);
 	bool operator==(const Vector2& lhs, const Vector2& rhs);
 	bool operator!=(const Vector2& lhs, const Vector2& rhs);
+	Vector2& operator+=(Vector2& a, const Vector2& b);
+	Vector2& operator-=(Vector2& a, const Vector2& b);
+	Vector2& operator*=(Vector2& a, float d);
+	Vector2& operator/=(Vector2& a, float d);
 }

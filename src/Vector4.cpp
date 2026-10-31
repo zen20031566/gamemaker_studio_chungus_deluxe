@@ -1,6 +1,6 @@
 #include "Vector4.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	const Vector4 Vector4::one = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
 	const Vector4 Vector4::zero = Vector4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -134,5 +134,41 @@ namespace GameMakerStudioChungusDeluxe
 	bool operator!=(const Vector4& lhs, const Vector4& rhs)
 	{
 		return !(lhs == rhs);
+	}
+
+	Vector4& operator+=(Vector4& a, const Vector4& b)
+	{
+		a.x += b.x;
+		a.y += b.y;
+		a.z += b.z;
+		a.w += b.w;
+		return a;
+	}
+
+	Vector4& operator-=(Vector4& a, const Vector4& b)
+	{
+		a.x -= b.x;
+		a.y -= b.y;
+		a.z -= b.z;
+		a.w -= b.w;
+		return a;
+	}
+
+	Vector4& operator*=(Vector4& a, float d)
+	{
+		a.x *= d;
+		a.y *= d;
+		a.z *= d;
+		a.w *= d;
+		return a;
+	}
+
+	Vector4& operator/=(Vector4& a, float d)
+	{
+		a.x /= d;
+		a.y /= d;
+		a.z /= d;
+		a.w /= d;
+		return a;
 	}
 }

@@ -2,7 +2,7 @@
 #include "Mathf.h"
 #include <string>
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	class Vector4
 	{
@@ -46,4 +46,8 @@ namespace GameMakerStudioChungusDeluxe
 	Vector4 operator/(const Vector4& a, float d);
 	bool operator==(const Vector4& lhs, const Vector4& rhs);
 	bool operator!=(const Vector4& lhs, const Vector4& rhs);
+	Vector4& operator+=(Vector4& a, const Vector4& b);
+	Vector4& operator-=(Vector4& a, const Vector4& b);
+	Vector4& operator*=(Vector4& a, float d);
+	Vector4& operator/=(Vector4& a, float d);
 }

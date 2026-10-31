@@ -1,6 +1,6 @@
 #include "AppWindow.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
     class Application
     {

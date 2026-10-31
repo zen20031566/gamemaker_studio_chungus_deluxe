@@ -1,6 +1,6 @@
 #include "Vector3.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	const Vector3 Vector3::down = Vector3(0.0f, -1.0f, 0.0f);
 	const Vector3 Vector3::left = Vector3(-1.0f, 0.0f, 0.0f);
@@ -232,5 +232,37 @@ namespace GameMakerStudioChungusDeluxe
 	bool operator!=(const Vector3& lhs, const Vector3& rhs)
 	{
 		return !(lhs == rhs);
+	}
+
+	Vector3& operator+=(Vector3& a, const Vector3& b)
+	{
+		a.x += b.x;
+		a.y += b.y;
+		a.z += b.z;
+		return a;
+	}
+
+	Vector3& operator-=(Vector3& a, const Vector3& b)
+	{
+		a.x -= b.x;
+		a.y -= b.y;
+		a.z -= b.z;
+		return a;
+	}
+
+	Vector3& operator*=(Vector3& a, float d)
+	{
+		a.x *= d;
+		a.y *= d;
+		a.z *= d;
+		return a;
+	}
+
+	Vector3& operator/=(Vector3& a, float d)
+	{
+		a.x /= d;
+		a.y /= d;
+		a.z /= d;
+		return a;
 	}
 }

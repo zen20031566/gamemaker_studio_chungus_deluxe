@@ -3,7 +3,7 @@
 #include <glfw/glfw3.h>
 #include <iostream> 
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
     AppWindow::~AppWindow()
     {

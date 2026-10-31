@@ -3,7 +3,7 @@
 #include "Application.h"
 #include <glfw/glfw3.h>
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	static GLFWwindow* window_Impl;
 

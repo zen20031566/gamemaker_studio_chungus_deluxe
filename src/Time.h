@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	class Time
 	{

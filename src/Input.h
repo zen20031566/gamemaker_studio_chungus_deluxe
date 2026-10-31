@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include "GMSCDMath.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	// declare key & button codes
 	enum class KeyCode

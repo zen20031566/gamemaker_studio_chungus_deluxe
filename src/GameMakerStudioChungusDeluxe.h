@@ -5,3 +5,7 @@
 #include "AppWindow.h"
 #include "Time.h"
 #include "Input.h"
+#include "SceneStateMachine.h"
+#include "Renderer.h"
+#include "Camera.h"
+#include "GMSCDComponents.h"

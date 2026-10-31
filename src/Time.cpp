@@ -2,7 +2,7 @@
 #include <glfw/glfw3.h>            
 #include "Mathf.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	static float currentTime = 0.0f;
 	static float deltaTime = 0.0f;

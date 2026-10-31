@@ -3,7 +3,7 @@
 #include <functional> 
 #include "GMSCDMath.h"
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
     enum class AppWindowEventType
     {

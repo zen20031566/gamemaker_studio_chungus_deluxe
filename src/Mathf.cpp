@@ -1,7 +1,7 @@
 #include "Mathf.h"
 #include <cmath>
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	float Mathf::sin(float f) { return std::sin(f); }
 	float Mathf::cos(float f) { return std::cos(f); }

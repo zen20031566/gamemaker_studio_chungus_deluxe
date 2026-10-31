@@ -1,7 +1,7 @@
 #pragma once
 #include <limits>
 
-namespace GameMakerStudioChungusDeluxe
+namespace GMSCD
 {
 	class Mathf
 	{
