@@ -1,5 +1,4 @@
 #include "GameMakerStudioChungusDeluxe.h"
-
 namespace GMSCD
 {
     // Actually define the static Application instance variable 
@@ -39,6 +38,8 @@ namespace GMSCD
 		CameraConfig cfg;
 		Vector2 size = window.getWindowSize();
 		Camera::init(cfg, (int)size.x, (int)size.y);
+		
+		Time::processTime(frameTime);
 
         while (isRunning)
         {
@@ -70,6 +71,7 @@ namespace GMSCD
         // window being an object on the stack. 
 
 		SceneStateMachine::dispose();
+		TextureAllocator::releaseUnusedTextures();
     }
 
     void Application::setTargetFrameRate(unsigned int frameRate)
@@ -109,8 +111,8 @@ namespace GMSCD
 				{
 					Renderer::setViewport(0, 0, windowData->width, windowData->height);
 				}
-                break;
 
+                break;
             }
         }
     }

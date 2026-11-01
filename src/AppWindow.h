@@ -8,7 +8,7 @@ namespace GMSCD
     enum class AppWindowEventType
     {
         CLOSE,
-        RESIZE
+        RESIZE,
     };
     using AppWindowEventCallbackFn = std::function<void(AppWindowEventType, void*)>; // type aliasing
 

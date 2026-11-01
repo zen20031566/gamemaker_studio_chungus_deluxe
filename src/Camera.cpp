@@ -15,20 +15,22 @@ namespace GMSCD
 
 	void Camera::init(CameraConfig cfg, int width, int height)
 	{
-		Camera::config = cfg;
-		Camera::recalculate(width, height);
+		config = cfg;
+		setViewportSize(width, height);
 	}
 
-	void Camera::recalculate(int width, int height)
+	void Camera::setViewportSize(int width, int height)
 	{
+		if (width <= 0 || height <= 0) return;
 		windowWidth = width;
 		windowHeight = height;
-		Camera::aspectRatio = width / (float)height;;
-		recalculateProjection();
+		recalculate();
 	}
 
-	void Camera::recalculateProjection()
+	void Camera::recalculate()
 	{
+		Camera::aspectRatio = windowWidth / (float)windowHeight;
+
 		// minX and minY is -maxX and -maxY respectively. 
 		float maxY = config.orthoSize;
 		float maxX = maxY * Camera::aspectRatio;
@@ -53,7 +55,7 @@ namespace GMSCD
 		if (size <= 0.0f) return;
 
 		config.orthoSize = size;
-		recalculateProjection();
+		recalculate();
 	}
 
 	float Camera::getOrthoSize()
@@ -65,8 +67,9 @@ namespace GMSCD
 	{
 		if (isDirty)
 		{
-			recalculateView();
-			recalculateViewProjection();
+			Matrix4x4 camTransform = Matrix4x4::translate(position);
+			view = camTransform.inverse();
+			vp = projection * view;
 			isDirty = false;
 		}
 		return view;
@@ -76,22 +79,12 @@ namespace GMSCD
 	{
 		if (isDirty)
 		{
-			recalculateView();
-			recalculateViewProjection();
+			Matrix4x4 camTransform = Matrix4x4::translate(position);
+			view = camTransform.inverse();
+			vp = projection * view;
 			isDirty = false;
 		}
 		return vp;
-	}
-
-	void Camera::recalculateView()
-	{
-		Matrix4x4 camTransform = Matrix4x4::translate(position);
-		view = camTransform.inverse();
-	}
-
-	void Camera::recalculateViewProjection()
-	{
-		vp = projection * view;
 	}
 
 	void Camera::translate(Vector3 translation)

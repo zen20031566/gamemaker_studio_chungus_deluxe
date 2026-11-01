@@ -9,6 +9,7 @@ namespace GMSCD
 		unsigned int meshId;
 		size_t vertexStride;
 		int vertexCount;
+		unsigned int textureId;
 		Vector4 tint;
 		Vector3 translation;
 		float rotationZ;

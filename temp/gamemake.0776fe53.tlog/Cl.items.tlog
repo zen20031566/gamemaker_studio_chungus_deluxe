@@ -2,7 +2,10 @@ C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Applic
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\AppWindow.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\AppWindow.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\BaseComponent.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\BaseComponent.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\BaseScene.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\BaseScene.obj
+C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Bomb.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Bomb.obj
+C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Bullet.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Bullet.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Camera.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Camera.obj
+C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Explosion.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Explosion.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\GameObject.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\GameObject.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\GameObjectCollection.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\GameObjectCollection.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\glad.c;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\glad.obj
@@ -12,6 +15,7 @@ C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\main.c
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Mathf.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Mathf.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Matrix4x4.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Matrix4x4.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Mesh.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Mesh.obj
+C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Player.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Player.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\SpriteRenderer.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\SpriteRenderer.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Renderer.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Renderer.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\SceneStateMachine.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\SceneStateMachine.obj
@@ -19,6 +23,8 @@ C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Showca
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\SplashScreen.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\SplashScreen.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\TestComponent.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\TestComponent.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Texture2D.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Texture2D.obj
+C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\TextureAllocator.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\TextureAllocator.obj
+C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\TextureUtils.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\TextureUtils.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Time.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Time.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Transform.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Transform.obj
 C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\src\Vector2.cpp;C:\Users\zenn\Desktop\GameEngine\GameMakerStudioChungusDeluxe\project\temp\Vector2.obj

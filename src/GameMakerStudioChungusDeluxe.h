@@ -9,3 +9,4 @@
 #include "Renderer.h"
 #include "Camera.h"
 #include "GMSCDComponents.h"
+#include "TextureAllocator.h"

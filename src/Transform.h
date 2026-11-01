@@ -23,4 +23,5 @@ private:
 	GMSCD::Vector2 position = GMSCD::Vector2::zero;
 	float rotation = 0.0f;
 	GMSCD::Vector2 scale = GMSCD::Vector2::one;
+	
 };

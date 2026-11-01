@@ -13,16 +13,14 @@ namespace GMSCD
 	public:
 		Camera() = delete;
 		static void init(CameraConfig cfg, int width, int height);
-		static void recalculate(int width, int height);
-		static void recalculateProjection();
+		static void setViewportSize(int width, int height);
+		static void recalculate();
 		static float getAspectRatio();
 		static Matrix4x4 getMatrix_projection();
 		static void setOrthoSize(float size);
 		static float getOrthoSize();
 		static Matrix4x4 getMatrix_view();
 		static Matrix4x4 getMatrix_viewProjection();
-		static void recalculateView();
-		static void recalculateViewProjection();
 		static void translate(Vector3 translation);
 		static void translate(float x, float y, float z);
 		static void setPosition(Vector3 position);

@@ -141,7 +141,10 @@
     <ClCompile Include="AppWindow.cpp" />
     <ClCompile Include="BaseComponent.cpp" />
     <ClCompile Include="BaseScene.cpp" />
+    <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectCollection.cpp" />
     <ClCompile Include="glad.c" />
@@ -151,6 +154,7 @@
     <ClCompile Include="Mathf.cpp" />
     <ClCompile Include="Matrix4x4.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
@@ -159,6 +163,7 @@
     <ClCompile Include="TestComponent.cpp" />
     <ClCompile Include="Texture2D.cpp" />
     <ClCompile Include="TextureAllocator.cpp" />
+    <ClCompile Include="TextureUtils.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector2.cpp" />
@@ -170,7 +175,10 @@
     <ClInclude Include="AppWindow.h" />
     <ClInclude Include="BaseComponent.h" />
     <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="Bomb.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Explosion.h" />
     <ClInclude Include="GameMakerStudioChungusDeluxe.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectCollection.h" />
@@ -181,6 +189,7 @@
     <ClInclude Include="Mathf.h" />
     <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SceneStateMachine.h" />
@@ -189,6 +198,7 @@
     <ClInclude Include="TestComponent.h" />
     <ClInclude Include="Texture2D.h" />
     <ClInclude Include="TextureAllocator.h" />
+    <ClInclude Include="TextureUtils.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2.h" />

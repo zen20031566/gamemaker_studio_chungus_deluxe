@@ -107,6 +107,21 @@
     <ClCompile Include="TextureAllocator.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="TextureUtils.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Bomb.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -192,6 +207,21 @@
     </ClInclude>
     <ClInclude Include="TextureAllocator.h">
       <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtils.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Bomb.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #include "BaseScene.h"
 #include "GameObjectCollection.h"
+#include "TextureAllocator.h"
 
 using namespace GMSCD;
 

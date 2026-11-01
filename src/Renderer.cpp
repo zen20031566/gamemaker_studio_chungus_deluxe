@@ -32,7 +32,7 @@ namespace GMSCD
 	void Renderer::setViewport(int x, int y, int width, int height)
 	{
 		glViewport(x, y, width, height);
-		Camera::recalculate(width, height);
+		Camera::setViewportSize(width, height);
 	}
 
 	void Renderer::setClearColor(float r, float g, float b, float a)
@@ -86,6 +86,7 @@ namespace GMSCD
 
 			// Apply materials 
 			glColor4fv(&dc.tint[0]);
+			glBindTexture(GL_TEXTURE_2D, dc.textureId);
 
 			// Draw Object 
 			glBindBuffer(GL_ARRAY_BUFFER, dc.meshId);
@@ -97,6 +98,7 @@ namespace GMSCD
 		}
 
 		// Unset common settings 
+		glBindTexture(GL_TEXTURE_2D, 0);
 		glBindBuffer(GL_ARRAY_BUFFER, 0); // Unbind any bounded VBO 
 		glDisableClientState(GL_VERTEX_ARRAY); // Disable vertex array state.
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY); // Disable texcoord array state. 

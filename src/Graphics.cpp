@@ -9,6 +9,7 @@ namespace GMSCD
 		dc.meshId = mesh->getID();
 		dc.vertexStride = sizeof(Vertex);
 		dc.vertexCount = mesh->getVertexCount();
+		dc.textureId = params.texture->getId();
 		dc.tint = params.tint;
 		dc.translation = params.translation;
 		dc.rotationZ = params.rotationZ;

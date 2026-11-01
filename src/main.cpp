@@ -1,4 +1,5 @@
 #include "GameMakerStudioChungusDeluxe.h"
+#include "SplashScreen.h"
 #include "ShowcaseScene.h"
 
 using namespace GMSCD;
@@ -11,8 +12,9 @@ int main()
 
 	if (result == 1)
 	{
+		SceneStateMachine::addScene<SplashScreen>();
 		SceneStateMachine::addScene<ShowcaseScene>();
-		SceneStateMachine::loadScene("ShowcaseScene"); 
+		SceneStateMachine::loadScene("SplashScreen"); 
 
 		std::cout << "main started" << std::endl;
 		app.setTargetFrameRate(60); 
