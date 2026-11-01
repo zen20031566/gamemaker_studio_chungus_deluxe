@@ -17,13 +17,15 @@ protected:
 	void onRender() override;
 
 private:
-	float lifetime = 0.0f;
+	float lifeTime = 0.0f;
 	float alpha;
 	float fadeDuration;
 	float fadeTimer;
 	bool fadeout;
-	SpriteRenderer* logoSpriteRenderer;
 	float startDelay;
+	SpriteRenderer* logoSpriteRenderer;
+	SpriteRenderer* infoSpriteRenderer;
 	GMSCD::Texture2D* logoTex;
+	GMSCD::Texture2D* infoTex;
 };
 

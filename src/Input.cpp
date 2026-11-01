@@ -316,7 +316,11 @@ namespace GMSCD
 		double x = 0.0;
 		double y = 0.0;
 		glfwGetCursorPos(window_Impl, &x, &y);
-		return Vector2((float)x, (float)y);
+
+		int width, height;
+		glfwGetWindowSize(window_Impl, &width, &height);
+
+		return Vector2((float)x, (float)(height - y));
 	}
 
 	Vector2 Input::getMouseDelta()

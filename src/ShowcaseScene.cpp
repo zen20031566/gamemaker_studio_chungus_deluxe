@@ -19,7 +19,6 @@ void ShowcaseScene::onInitialize()
 
 	//player
 	GameObject* player = GameObject::create("player");
-	player->addComponent<SpriteRenderer>();
 	player->addComponent<Player>();
 
 }

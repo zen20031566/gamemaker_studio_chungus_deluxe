@@ -9,7 +9,7 @@ namespace GMSCD
 	void GameObjectCollection::add(GameObject* go)
 	{
 		gameObjectsToAdd.insert(go);
-		gameObjects.insert(go);
+		//gameObjects.insert(go);
 	}
 
 	void GameObjectCollection::update(float deltaTime)
@@ -32,20 +32,23 @@ namespace GMSCD
 		//Only if there are new objects
 		if (!gameObjectsToAdd.empty())
 		{
+			std::unordered_set<GameObject*> gameObjectsToInit;
+			gameObjectsToInit.swap(gameObjectsToAdd);
+
 			// 2. For all element in gameObjectsToAdd, run its awake fn
-			for (GameObject* go : gameObjectsToAdd)
+			for (GameObject* go : gameObjectsToInit)
 			{
 				go->runComponentAwake();
 			}
 
 			// 3. For all element in gameObjectsToAdd, run its start fn
-			for (GameObject* go : gameObjectsToAdd)
+			for (GameObject* go : gameObjectsToInit)
 			{
 				go->runComponentStart();
-			}
 
-			// 4. clear gameObjectsToAdd
-			gameObjectsToAdd.clear();
+				//add only after awake and start done
+				gameObjects.insert(go);
+			}
 		}
 
 		// 5. For all element in gameObjects, run its update(deltaTime) fn

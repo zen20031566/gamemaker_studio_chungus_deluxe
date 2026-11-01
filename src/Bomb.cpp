@@ -1,4 +1,6 @@
 #include "Bomb.h"
+#include "TextureAllocator.h"
+#include "Explosion.h"
 
 using namespace GMSCD;
 
@@ -13,17 +15,30 @@ Bomb::~Bomb()
 
 void Bomb::awake()
 {
-
+	transform = gameObject->getComponent<Transform>();
+	spriteRenderer = gameObject->addComponent<SpriteRenderer>();
 }
 
 void Bomb::start()
 {
+	TextureConfig cfg = { TextureWrapMode::CLAMP, TextureWrapMode::CLAMP, TextureFilterMode::LINEAR };
+	Texture2D* bombTex = TextureAllocator::getTexture("../assets/bomb.png");
+	bombTex->setConfig(cfg);
 
+	spriteRenderer->setTexture(bombTex);
+	transform->setScale(Vector2(0.3f, 0.3f));
 }
 
 void Bomb::update(float deltaTime)
 {
+	lifeTime += deltaTime;
 
+	if (lifeTime >= 2.0f)
+	{
+		GameObject* explosionObj = GameObject::create("explosion", transform->getPosition());
+		explosionObj->addComponent<Explosion>();
+		gameObject->destroy();
+	}
 }
 
 void Bomb::render()

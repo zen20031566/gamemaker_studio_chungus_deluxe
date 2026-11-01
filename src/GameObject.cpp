@@ -5,7 +5,7 @@
 
 namespace GMSCD
 {
-	GameObject* GameObject::create(const std::string& name)
+	GameObject* GameObject::create(const std::string& name, Vector2 pos)
 	{
 		std::string finalName = name;
 
@@ -17,7 +17,8 @@ namespace GMSCD
 		}
 
 		GameObject* go = new GameObject(finalName);
-		go->addComponent<Transform>();
+		Transform* transform = go->addComponent<Transform>();
+		transform->setPosition(pos);
 		GameObjectCollection::add(go);
 		return go;
 	}
@@ -40,22 +41,25 @@ namespace GMSCD
 	{
 		if (componentsJustAdded.empty()) return;
 
-		for (BaseComponent* newComponent : componentsJustAdded)
+		//move to here so i can loop safely because i want some components to be able to add components to the game obj on awake or start
+		componentsToInit.swap(componentsJustAdded);
+
+		for (BaseComponent* component : componentsToInit)
 		{
-			newComponent->awake();
+			component->awake();
 		}
 	}
 
 	void GameObject::runComponentStart()
 	{
-		if (componentsJustAdded.empty()) return;
+		if (componentsToInit.empty()) return;
 
-		for (BaseComponent* newComponent : componentsJustAdded)
+		for (BaseComponent* component : componentsToInit)
 		{
-			newComponent->start();
+			component->start();
 		}
 
-		componentsJustAdded.clear();	
+		componentsToInit.clear();
 	}
 
 	void GameObject::runComponentUpdate(float deltaTime)

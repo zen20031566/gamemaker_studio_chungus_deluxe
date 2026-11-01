@@ -3,13 +3,14 @@
 #include <string>
 #include "BaseComponent.h" 
 #include <iostream>
+#include "GMSCDMath.h"
 
 namespace GMSCD
 { 
 	class GameObject
 	{
 	public:
-		static GameObject* create(const std::string& name = "New GameObject");
+		static GameObject* create(const std::string& name = "New GameObject", Vector2 pos = Vector2::zero);
 		~GameObject();
 
 		template <
@@ -60,6 +61,36 @@ namespace GMSCD
 			return nullptr;
 		}
 
+		template <
+			typename T,
+			typename = typename std::enable_if<std::is_base_of<BaseComponent, T>::value>::type>
+
+		bool removeComponent()
+		{
+			T* component = getComponent<T>();
+			if (component == nullptr) return false;
+
+			// Remove from componentsJustAdded
+			auto it = std::find(componentsJustAdded.begin(), componentsJustAdded.end(),component);
+			if (it != componentsJustAdded.end()) componentsJustAdded.erase(it);
+
+			// Remove from componentsToInit
+			it = std::find(componentsToInit.begin(), componentsToInit.end(), component);
+			if (it != componentsToInit.end()) componentsToInit.erase(it);
+
+			// Remove from components
+			it = std::find(components.begin(), components.end(), component);
+
+			if (it != components.end())
+			{
+				components.erase(it);
+				delete component;
+				return true;
+			}
+
+			return false;
+		}
+
 		void runComponentAwake();
 		void runComponentStart();
 		void runComponentUpdate(float deltaTime);
@@ -80,6 +111,7 @@ namespace GMSCD
 
 		std::vector<BaseComponent*> components;
 		std::vector<BaseComponent*> componentsJustAdded;
+		std::vector<BaseComponent*> componentsToInit;
 		bool flaggedForDeletion = false;
 	};
 }

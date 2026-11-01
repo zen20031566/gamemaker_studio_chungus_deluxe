@@ -1,6 +1,7 @@
 #pragma once
 #include "BaseComponent.h"
 #include "GameObject.h"
+#include "GMSCDMath.h"
 
 class TestComponent : public GMSCD::BaseComponent
 {

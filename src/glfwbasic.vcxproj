@@ -182,7 +182,6 @@
     <ClInclude Include="GameMakerStudioChungusDeluxe.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectCollection.h" />
-    <ClInclude Include="GMSCDComponents.h" />
     <ClInclude Include="GMSCDMath.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />

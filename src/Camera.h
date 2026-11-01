@@ -26,6 +26,7 @@ namespace GMSCD
 		static void setPosition(Vector3 position);
 		static void setPosition(float x, float y, float z);
 		static Vector3 screenToWorld(Vector2 screenPos);
+		static bool isPointVisible(Vector2 worldPos, float padding = 0.0f);
 
 	private:
 		static Matrix4x4 projection;

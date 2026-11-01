@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseComponent.h"
 #include "GameObject.h"
-#include "Vector2.h"
+#include "GMSCDMath.h"
 
 class Transform : public GMSCD::BaseComponent
 {
@@ -12,6 +12,7 @@ public:
 	GMSCD::Vector2 getPosition() const;
 	float getRotation() const;
 	GMSCD::Vector2 getScale() const;
+	GMSCD::Matrix4x4 getTransformMatrix() const;
 
 	void setPosition(GMSCD::Vector2 value);
 	void setRotation(float value);

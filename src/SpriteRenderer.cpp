@@ -3,6 +3,7 @@
 #include "Transform.h"
 #include "Vector2.h"
 #include "TextureUtils.h"
+#include "TextureAllocator.h"
 
 using namespace GMSCD;
 
@@ -19,6 +20,7 @@ SpriteRenderer::SpriteRenderer(GameObject* go) : BaseComponent(go)
 SpriteRenderer::~SpriteRenderer()
 {
 	std::cout << gameObject->getName().c_str() << ": [SpriteRenderer] component destroyed" << std::endl;
+	if (texture != nullptr) TextureAllocator::returnTexture(texture);
 	delete mesh;
 }
 
@@ -41,6 +43,8 @@ void SpriteRenderer::render()
 
 void SpriteRenderer::setTexture(Texture2D* t)
 {
+	if (texture == t) return;
+	if (texture != nullptr) TextureAllocator::returnTexture(texture);
 	texture = t;
 }
 

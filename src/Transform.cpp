@@ -41,3 +41,13 @@ void Transform::setScale(Vector2 value)
 {
 	scale = value;
 }
+
+Matrix4x4 Transform::getTransformMatrix() const
+{
+	return Matrix4x4::TRS(
+		Vector3(position.x, position.y, 0.0f),
+		rotation,
+		Vector3(0.0f, 0.0f, 1.0f),
+		Vector3(scale.x, scale.y, 1.0f)
+	);
+}

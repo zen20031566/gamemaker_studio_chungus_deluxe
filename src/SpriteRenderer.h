@@ -1,9 +1,9 @@
 #pragma once
 #include "BaseComponent.h"
 #include "GameObject.h"
+#include "GMSCDMath.h"
 #include "Mesh.h"
 #include "Texture2D.h"
-#include "Vector4.h"
 
 class SpriteRenderer : public GMSCD::BaseComponent
 {

@@ -1,4 +1,6 @@
 #pragma once
+#include "GameObject.h"
+#include "BaseComponent.h"
 #include "SpriteRenderer.h"
 #include "Transform.h"
 #include "Bomb.h"

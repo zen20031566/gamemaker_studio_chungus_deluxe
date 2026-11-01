@@ -1,8 +1,9 @@
 #pragma once
 #include "BaseComponent.h"
 #include "GameObject.h"
-#include "SpriteRenderer.h"
 #include "Transform.h"
+#include "SpriteRenderer.h"
+#include "GMSCDMath.h"
 
 class Player : public GMSCD::BaseComponent
 {

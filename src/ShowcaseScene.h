@@ -12,6 +12,5 @@ protected:
 	void onDeactivate() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
-
 };
 

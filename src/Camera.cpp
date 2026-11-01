@@ -126,4 +126,18 @@ namespace GMSCD
 		// return the x,y,0 coordinate which is in the world space. 
 		return Vector3(wPos.x, wPos.y, 0.0f);
 	}
+
+	bool Camera::isPointVisible(Vector2 worldPos, float padding)
+	{
+		float halfHeight = config.orthoSize + padding;
+		float halfWidth = halfHeight * aspectRatio;
+
+		float minX = position.x - halfWidth;
+		float maxX = position.x + halfWidth;
+		float minY = position.y - halfHeight;
+		float maxY = position.y + halfHeight;
+
+		return worldPos.x >= minX && worldPos.x <= maxX &&
+			worldPos.y >= minY && worldPos.y <= maxY;
+	}
 }
